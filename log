@@ -299,3 +299,12 @@ test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dl
 cc1.exe: all warnings being treated as errors
 Compilation failed
 95c28e7
+Fri Mar 11 17:01:45 HSP 2022: 
+ exercises.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Werror=attributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+69ad86e
