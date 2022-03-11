@@ -247,3 +247,37 @@ test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dl
 cc1.exe: all warnings being treated as errors
 Compilation failed
 05d528e
+Fri Mar 11 16:54:30 HSP 2022: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'sumaV':
+exercises.c:128:26: error: passing argument 1 of 'strlen' from incompatible pointer type [-Werror=incompatible-pointer-types]
+  128 |    int * largo = strlen(a->datos);
+      |                         ~^~~~~~~
+      |                          |
+      |                          int *
+In file included from test.c:3:
+C:/TDM-GCC-64/x86_64-w64-mingw32/include/string.h:64:37: note: expected 'const char *' but argument is of type 'int *'
+   64 |   size_t __cdecl strlen(const char *_Str);
+      |                         ~~~~~~~~~~~~^~~~
+In file included from test.c:5:
+exercises.c:128:18: error: initialization of 'int *' from 'size_t' {aka 'long long unsigned int'} makes pointer from integer without a cast [-Werror=int-conversion]
+  128 |    int * largo = strlen(a->datos);
+      |                  ^~~~~~
+exercises.c:129:31: error: passing argument 1 of 'strlen' from incompatible pointer type [-Werror=incompatible-pointer-types]
+  129 |    for (int i = 0; i < strlen(largo); i++)
+      |                               ^~~~~
+      |                               |
+      |                               int *
+In file included from test.c:3:
+C:/TDM-GCC-64/x86_64-w64-mingw32/include/string.h:64:37: note: expected 'const char *' but argument is of type 'int *'
+   64 |   size_t __cdecl strlen(const char *_Str);
+      |                         ~~~~~~~~~~~~^~~~
+test.c: At top level:
+test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Werror=attributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+e4e4878
