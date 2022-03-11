@@ -173,3 +173,20 @@ test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dl
 cc1.exe: all warnings being treated as errors
 Compilation failed
 ca3f1e8
+Fri Mar 11 16:48:22 HSP 2022: 
+ exercises.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function 'sumaV':
+exercises.c:129:17: error: invalid operands to binary + (have 'int *' and 'int *')
+  129 |    c = a->datos + b->datos;
+      |        ~~~~~~~~ ^ ~~~~~~~~
+      |         |          |
+      |         int *      int *
+test.c: At top level:
+test.c:8:8: error: '_strdup' redeclared without dllimport attribute: previous dllimport ignored [-Werror=attributes]
+    8 | char * _strdup(const char * str) {
+      |        ^~~~~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+b5420bc
